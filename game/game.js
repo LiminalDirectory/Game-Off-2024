@@ -10,7 +10,7 @@ const gameState = {
 const config = {
   height: 512,
   width: 512,
-  backgroundColor: 0x140026, //My palette: 140026-660035-bf1600-ff7300
+  backgroundColor: 0x140026, //My palette: 140026-660035-bf1600-ff7300, or 080033-2d0059-a600a6-f29dd6
   scene: [Title, Scene1],
   pixelArt: true, //Turns off anti-aliasing
   physics: {
