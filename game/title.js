@@ -4,39 +4,26 @@ class Title extends Phaser.Scene {
   }
   preload() {
     //Load required sprites
-    //this.load.image("mapBG", "assets/sprites/MapBG.png");
+    this.load.image("titleBG", "assets/sprites/TitleBG.png");
   }
   create() {
     //Create map background image
-    //this.add.sprite(200, 112, "mapBG").setDepth(0);
+    let titleBG = this.add.sprite(256, 256, "titleBG").setDepth(0);
+    titleBG.setInteractive();
     
     //Create and style the title
-    let titleText = this.add.text(200, 10, "  The Secret Temple of Secret Secrets  ", { fontFamily: 'FiveBySeven', fontSize: '50px', fill: '#bf1600', align: "center", lineSpacing: -25 });
-    titleText.setOrigin(titleText.halfWidth, 0);
-    titleText.setShadow(-6, 6, "#ff7300", 0);
-    titleText.setDepth(1);
-
-    
-    //Create, style, and set interactions for the play button
-    let playButton = this.add.text(200, 100, 'Play Game', { fontFamily: 'FiveBySeven', fontSize: '30px', fill: '#bf1600' });
-    playButton.setOrigin(playButton.halfWidth, 0);
-    playButton.setDepth(1);
-    playButton.setInteractive();
-    
-    //On hover: change color and scale
-    playButton.on('pointerover', () => {
-      playButton.setFill("#ff7300");
-      playButton.setScale(1.1);
-    });
-    
-    //No hover: reset color and scale
-    playButton.on('pointerout', () => {
-      playButton.setFill("#bf1600");
-      playButton.setScale(1);
-    });
-    
+    let playText = this.add.text(200, 10, "  [Click Anywhere To Play]  ", { fontFamily: 'FiveBySeven', fontSize: '30px', fill: '#bf1600', align: "center", lineSpacing: -25 });
+    playText.setOrigin(playText.halfWidth, 0);
+    playText.setShadow(-6, 6, "#ff7300", 0);
+    playText.setDepth(1);
+    playText.setInteractive();
+  
     //On click: start the game
-    playButton.on('pointerup', () => {
+    titleBG.on('pointerup', () => {
+      gameState.nextScene = true;
+    });
+
+    playText.on('pointerup', () => {
       gameState.nextScene = true;
     });
   }
