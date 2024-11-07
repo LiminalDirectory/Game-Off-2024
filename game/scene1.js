@@ -8,12 +8,12 @@ class Scene1 extends Phaser.Scene {
   }
   create() {
     //Add text to the screen
-    let exposition = this.add.text(256, 10, "Finally, you've found it. The thing you've spent your whole life searching for!\n\nThe Secret Temple of Secrets\n\nNot only will you be its discoverer, but you will also be the first to find all the secrets within.\nYour objective: reach the final floor of the temple. Good Luck!", { fontFamily: 'FiveBySeven', fontSize: '30px', fill: '#ff7300', align: "center", lineSpacing: -25 });
+    let exposition = this.add.text(256, 10, "Finally, you've found the very thing you've been searching for.\n\nThe Secret Temple of Secrets\n\nNot only will you be its discoverer,\nbut you will also be the first to find all the secrets within.\nYour objective: reach the final floor of the temple.\nGood Luck!", { fontFamily: 'FiveBySeven', fontSize: '50px', fill: '#ff7300', align: "center", lineSpacing: -10 });
     exposition.setOrigin(exposition.halfWidth, 0);
     exposition.setDepth(1);
 
     //Create the player character and begin their "spawn" animation
-    let player = this.add.sprite(256, 450, "sheet1").setDepth(2).setScale(4).setFrame(12).setInteractive();
+    let player = this.add.sprite(256, 400, "sheet1").setDepth(2).setScale(8).setFrame(12).setInteractive();
     
     //Create character animations
     this.anims.create({
@@ -26,12 +26,12 @@ class Scene1 extends Phaser.Scene {
 
     //On hover: scale up
     player.on('pointerover', () => {
-      player.setScale(4.4);
+      player.setScale(10);
     });
 
     //No hover: reset scale
     player.on('pointerout', () => {
-      player.setScale(4);
+      player.setScale(8);
     });
 
     //On click: start the game
