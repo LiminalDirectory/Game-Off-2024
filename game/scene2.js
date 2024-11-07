@@ -144,13 +144,13 @@ class Scene2 extends Phaser.Scene {
     };
     
     //If the player wins, go to next scene
-    if (gameState.nextScene = 1) {
+    if (gameState.nextScene === 1) {
       this.scene.stop("Scene2");
       this.scene.start("Scene3");
     };
 
     //If the player dies, go to the next scene
-    if (gameState.nextScene = 2) {
+    if (gameState.nextScene === 2) {
       this.scene.stop("Scene2");
       this.scene.start("Scene4");
     }
