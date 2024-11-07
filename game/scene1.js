@@ -13,7 +13,7 @@ class Scene1 extends Phaser.Scene {
     exposition.setDepth(1);
 
     //Create the player character and begin their "spawn" animation
-    let player = this.add.sprite(256, 400, "sheet1").setDepth(2).setScale(8).setFrame(12).setInteractive();
+    let player = this.add.sprite(256, 420, "sheet1").setDepth(2).setScale(8).setFrame(12).setInteractive();
     
     //Create character animations
     this.anims.create({
