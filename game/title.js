@@ -12,7 +12,7 @@ class Title extends Phaser.Scene {
     titleBG.setInteractive();
     
     //Create and style the title
-    let playText = this.add.text(256, 200, "  [Click Anywhere To Play]  ", { fontFamily: 'FiveBySeven', fontSize: '30px', fill: '#bf1600', align: "center", lineSpacing: -25 });
+    let playText = this.add.text(256, 202, "  [Click Anywhere To Play]  \nABCDEFGHIJKLMNOPQRSTUVWXYZ\nabcdefghijklmnopqrstuvwxyz", { fontFamily: 'FiveBySeven', fontSize: '30px', fill: '#bf1600', align: "center", lineSpacing: -25 });
     playText.setOrigin(playText.halfWidth, 0);
     playText.setDepth(1);
     playText.setInteractive();
