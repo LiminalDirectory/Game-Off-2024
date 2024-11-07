@@ -109,8 +109,8 @@ class Scene2 extends Phaser.Scene {
 
     //Set velocity and play cooresponding animations
     if (!gameState.isRolling) {
-      gameState.player.setVelocityX(currentDirection[0] * 20);
-      gameState.player.setVelocityY(currentDirection[1] * 20);
+      gameState.player.setVelocityX(velo[0] * 20);
+      gameState.player.setVelocityY(velo[1] * 20);
       if (velo[0] === 0 && velo[1] === 0) {
         gameState.player.anims.pause();
       } else if (velo[0] === -1) {
