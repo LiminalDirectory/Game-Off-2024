@@ -46,35 +46,35 @@ class Scene2 extends Phaser.Scene {
       key: 'rollR',
       frames: this.anims.generateFrameNumbers("sheet1", { start: 96, end: 117 }),
       frameRate: 22,
-      repeat: -1
+      repeat: 0
     });
 
     this.anims.create({
       key: 'rollBR',
       frames: this.anims.generateFrameNumbers("sheet1", { start: 128, end: 150 }),
       frameRate: 22,
-      repeat: -1
+      repeat: 0
     });
 
     this.anims.create({
       key: 'rollL',
       frames: this.anims.generateFrameNumbers("sheet1", { start: 160, end: 182 }),
       frameRate: 22,
-      repeat: -1
+      repeat: 0
     });
 
     this.anims.create({
       key: 'rollBL',
       frames: this.anims.generateFrameNumbers("sheet1", { start: 192, end: 214 }),
       frameRate: 22,
-      repeat: -1
+      repeat: 0
     });
 
     this.anims.create({
       key: 'dead',
       frames: this.anims.generateFrameNumbers("sheet1", { start: 40, end: 47 }),
       frameRate: 4,
-      repeat: -1
+      repeat: 0
     });
 
     //Create input keys
@@ -93,7 +93,44 @@ class Scene2 extends Phaser.Scene {
   }
   update() {
     //Movement controls
-    if () {}
+    let velo = [0, 0];
+    if (!(gameState.d || gameState.cursors.right.isDown) && (gameState.a || gameState.cursors.left.isDown)) {
+      velo[0] = -1;
+    }
+    if (!(gameState.a || gameState.cursors.left.isDown) && (gameState.d || gameState.cursors.right.isDown)) {
+      velo[0] = 1;
+    }
+    if (!(gameState.s || gameState.cursors.down.isDown) && (gameState.w || gameState.cursors.up.isDown)) {
+      velo[1] = -1;
+    }
+    if (!(gameState.w || gameState.cursors.up.isDown) && (gameState.s || gameState.cursors.down.isDown)) {
+      velo[1] = 1;
+    }
+
+    //Set velocity and play cooresponding animations
+    if (!gameState.isRolling) {
+      gameState.player.setVelocityX(currentDirection[0] * 20);
+      gameState.player.setVelocityY(currentDirection[1] * 20);
+      if (velo[0] === 0 && velo[1] === 0) {
+        gameState.player.anims.pause();
+      } else if (velo[0] === -1) {
+        if (velo[1] === -1) {
+          gameState.player.anims.play("runBL", true);
+        } else {
+          gameState.player.anims.play("runL", true);
+        }
+      } else if (velo[0] === 1) {
+        if (velo[1] === -1) {
+          gameState.player.anims.play("runBR", true);
+        } else {
+          gameState.player.anims.play("runR", true);
+        }
+      } else if (velo[1] === -1) {
+        gameState.player.anims.play("runBR", true);
+      } else {
+        gameState.player.anims.play("runR", true);
+      }
+    };
     
     //If the player wins, go to next scene
     if (gameState.nextScene = 1) {
