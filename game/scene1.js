@@ -8,7 +8,7 @@ class Scene1 extends Phaser.Scene {
   }
   create() {
     //Add text to the screen
-    let exposition = this.add.text(256, 10, "Finally, you've found the very thing you've been searching for.\n\nThe Secret Temple of Secrets\n\nNot only will you be its discoverer,\nbut you will also be the first to find all the secrets within.\nYour goal: reach the final floor of the temple.\nGood Luck!", { fontFamily: 'FiveBySeven', fontSize: '40px', fill: '#ff7300', align: "center", lineSpacing: -10 });
+    let exposition = this.add.text(256, 10, "Finally, you've found what you've been searching for.\n\nThe Secret Temple of Secrets!\n\nNot only will you be its discoverer,\nbut you will also be the first to find\nall the secrets within.\n\nYour goal:\nreach the final floor of the temple", { fontFamily: 'FiveBySeven', fontSize: '40px', fill: '#ff7300', align: "center", lineSpacing: -10 });
     exposition.setOrigin(exposition.halfWidth, 0);
     exposition.setDepth(1);
 
