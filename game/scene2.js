@@ -1,6 +1,6 @@
-class Scene1 extends Phaser.Scene {
+class Scene2 extends Phaser.Scene {
   constructor() {
-    super({ key: 'Scene1' });
+    super({ key: 'Scene2' });
   }
   preload() {
     this.load.spritesheet("sheet1", "assets/sprites/Spritesheet.png", { frameWidth: 16, frameHeight: 16 });
