@@ -79,13 +79,21 @@ class Scene1 extends Phaser.Scene {
 
     //Create input keys
     gameState.cursors = this.input.keyboard.createCursorKeys();
+    this.input.keyboard.on("keydown-W", function () {gameState.w = true});
+    this.input.keyboard.on("keydown-A", function () {gameState.a = true});
+    this.input.keyboard.on("keydown-S", function () {gameState.s = true});
+    this.input.keyboard.on("keydown-D", function () {gameState.d = true});
+    this.input.keyboard.on("keyup-W", function () {gameState.w = false});
+    this.input.keyboard.on("keyup-A", function () {gameState.a = false});
+    this.input.keyboard.on("keyup-S", function () {gameState.s = false});
+    this.input.keyboard.on("keyup-D", function () {gameState.d = false});
     
     //If ESC is pressed, go back to the title
     this.input.keyboard.on('keydown-ESC', function () {gameState.escape = true});
   }
   update() {
     //Movement controls
-    controls();
+    if () {}
     
     //If the player wins, go to next scene
     if (gameState.nextScene = 1) {
