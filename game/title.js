@@ -14,7 +14,6 @@ class Title extends Phaser.Scene {
     //Create and style the title
     let playText = this.add.text(256, 200, "  [Click Anywhere To Play]  ", { fontFamily: 'FiveBySeven', fontSize: '30px', fill: '#bf1600', align: "center", lineSpacing: -25 });
     playText.setOrigin(playText.halfWidth, 0);
-    playText.setShadow(-2, 2, "#ff7300", 0);
     playText.setDepth(1);
     playText.setInteractive();
   
