@@ -11,7 +11,18 @@ class Scene2 extends Phaser.Scene {
     this.add.sprite(256, 256, "arena").setDepth(0);
 
     //Create character sprite
-    gameState.player = this.add.sprite(256, 256, "sheet1").setDepth(2).setFrame(32);
+    gameState.player = this.physics.add.sprite(256, 256, "sheet1").setDepth(2).setFrame(32);
+
+    //Create collision detection groups
+    let rects = this.physics.add.staticGroup();
+    let spikes = this.physics.add.staticGroup();
+
+    //Add collision to the arena walls
+    //rects.create(x, y, "sheet1").setFrame(15).body.setSize(width, height, 0, 0);
+    rects.create(32, 0, "sheet1").setFrame(15).body.setSize(448, 64, 0, 0);
+    rects.create(0, 64, "sheet1").setFrame(15).body.setSize(32, 432, 0, 0);
+    rects.create(480, 64, "sheet1").setFrame(15).body.setSize(32, 432, 0, 0);
+    rects.create(32, 496, "sheet1").setFrame(15).body.setSize(448, 16, 0, 0);
 
     //Create character animations
     this.anims.create({
