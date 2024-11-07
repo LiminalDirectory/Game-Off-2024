@@ -4,7 +4,6 @@ class Scene1 extends Phaser.Scene {
   }
   preload() {
     this.load.spritesheet("sheet1", "assets/sprites/Spritesheet.png", { frameWidth: 16, frameHeight: 16 });
-    this.load.image("arena", "assets/sprites/Dungeon.png");
   }
   create() {
     //Add text to the screen
